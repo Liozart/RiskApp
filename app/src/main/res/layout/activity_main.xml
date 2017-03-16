@@ -10,8 +10,48 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.chat.riskapp.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- <ImageView
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:src="@drawable/map" /> -->
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:background="#FF909090"/>
+
+    <EditText
+        android:id="@+id/lblobjs"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Objectifs :" />
+    <EditText
+        android:id="@+id/objectifs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblobjs"
+        android:text="-Obj1\n-Obj2"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:background="#FF909090"
+        android:layout_below="@id/objectifs"/>
+
+    <Button
+        android:id="@+id/btn_nextPhase"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/objectifs"
+        android:text="Next phase"/>
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Surrender"
+        android:id="@+id/button"
+        android:layout_below="@+id/objectifs"
+        android:layout_toEndOf="@+id/btn_nextPhase" />
+
 </RelativeLayout>
