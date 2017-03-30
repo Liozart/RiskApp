@@ -1,57 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.chat.riskapp.MainActivity">
 
-    <!-- <ImageView
-      android:layout_height="wrap_content"
-      android:layout_width="wrap_content"
-      android:src="@drawable/map" /> -->
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2px"
-        android:background="#FF909090"/>
-
-    <EditText
-        android:id="@+id/lblobjs"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Objectifs :" />
-    <EditText
-        android:id="@+id/objectifs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/lblobjs"
-        android:text="-Obj1\n-Obj2"/>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2px"
-        android:background="#FF909090"
-        android:layout_below="@id/objectifs"/>
-
-    <Button
-        android:id="@+id/btn_nextPhase"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/objectifs"
-        android:text="Next phase"/>
-
-    <Button
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:text="Surrender"
-        android:id="@+id/button"
-        android:layout_below="@+id/objectifs"
-        android:layout_toEndOf="@+id/btn_nextPhase" />
-
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/ic_map_final2"
+        android:id="@+id/map"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        />
 </RelativeLayout>
