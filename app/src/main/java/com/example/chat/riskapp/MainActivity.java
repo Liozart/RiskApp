@@ -3,6 +3,7 @@ package com.example.chat.riskapp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Button;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.drafts.Draft_17;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.map);
         try {
             final WebSocketClient webSocketClient = new WebSocketClient(new URI("ws://" + SERVER_IP + ":" + SERVER_PORT), new Draft_17()) {
                 @Override
@@ -57,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                             for(String planet : planets){
                                 //0 = id, 1 = is player, 2 = troops, 3 = color
                                 String[] data = planet.split(",");
+                                int idBtn = getResources().getIdentifier("p" + data[0], "id", getPackageName());
+                                Button btn = ((Button) findViewById(idBtn));
+                                btn.setText(data[2]);
                             }
                             break;
                         case '7':
