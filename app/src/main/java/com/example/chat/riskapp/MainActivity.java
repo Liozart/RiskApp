@@ -1,5 +1,6 @@
 package com.example.chat.riskapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -58,11 +59,7 @@ public class MainActivity extends AppCompatActivity {
                             for(String planet : planets){
                                 //0 = id, 1 = is player, 2 = troops, 3 = color
                                 String[] data = planet.split(",");
-                                int idBtn = getResources().getIdentifier("p" + data[0], "id", getPackageName());
-                                Button btn = ((Button) findViewById(idBtn));
-                                btn.setText(data[2]);
-                                btn.setTextColor(Color.parseColor("#ffffff"));
-                                btn.setTextSize(12);
+                                setBtn(data);
                             }
                             break;
                         case '7':
@@ -97,5 +94,25 @@ public class MainActivity extends AppCompatActivity {
             Log.e("MYAPP", "exception: " + e.toString());
         }
 
+    }
+
+    public void setBtn(String[] data){
+        class OneShotTask implements Runnable {
+            String[] str;
+            OneShotTask(String[] s) { str = s; }
+            public void run() {
+            }
+        }
+        Thread t = new Thread();
+        this.runOnUiThread(new OneShotTask(data) {
+            @Override
+            public void run() {
+                int idBtn = getResources().getIdentifier("p" + str[0], "id", getPackageName());
+                Button btn = ((Button) findViewById(idBtn));
+                btn.setText(str[2]);
+                btn.setTextColor(Color.parseColor("#ffffff"));
+                btn.setTextSize(12);
+            }
+        });
     }
 }
