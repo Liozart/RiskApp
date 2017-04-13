@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                                 int idBtn = getResources().getIdentifier("p" + data[0], "id", getPackageName());
                                 Button btn = ((Button) findViewById(idBtn));
                                 btn.setText(data[2]);
+                                btn.Color.parseColor("#ffffff");
+                                btn.setTextSize(12);
                             }
                             break;
                         case '7':
